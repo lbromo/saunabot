@@ -15,13 +15,14 @@ type response_t struct {
 }
 
 func handler(w http.ResponseWriter, req *http.Request) {
-    decoder := json.NewDecoder(req.Body)
+    /*decoder := json.NewDecoder(req.Body)
     var resp response_t
     err := decoder.Decode(&resp)
     if err != nil {
         panic("PROBLEM")
     }
-    fmt.Printf("%+v", resp)
+    fmt.Printf("%+v", resp)*/
+    fmt.Printf("Abekat\n")
 }
 
 func main() {

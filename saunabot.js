@@ -8,7 +8,7 @@ var saunabot = {
     init: function() {
         setInterval(function() {
             saunabot.update();
-        }, 500);
+        }, 250);
     },
 
     update: function() {

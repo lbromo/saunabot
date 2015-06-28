@@ -33,7 +33,7 @@ var saunabot = {
 
     handle: function(message) {
         if (message.text === '/sauna') {
-            saunabot.reply(message.chat.id, 'NO SAUNA FOR YOU!');
+            saunabot.reply(message.chat.id, 'Det ved jeg fandme ikk\'!');
         }
 
         if (message.text == '/kenneth') {

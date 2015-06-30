@@ -41,7 +41,7 @@
                         return commands[i].callback(message);
                     }
                 } else {
-                    if (message.text.indexOf(commands[i].command) > -1) {
+                    if (message.text.toLowerCase().indexOf(commands[i].command) > -1) {
                         return commands[i].callback(message);
                     }
                 }

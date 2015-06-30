@@ -3,22 +3,16 @@ var sauna    = require(__dirname + '/recipes/sauna.recipe.js');
 var kenneth  = require(__dirname + '/recipes/kenneth.recipe.js');
 var beer     = require(__dirname + '/recipes/beer.recipe.js');
 
-saunabot.init('121725983:AAGJCGKpU6ni2zqLzMjlVjF2w-p5z7Q3a6U', 250);
+saunabot.init('123252775:AAGNgY8PxdgjGQ8TklY3RbEnsc3MPmnU16w', 250);
 
 saunabot.when('/sauna', function(message) {
-    sauna.run(message, function(message, reply) {
-        saunabot.reply(message, reply);
-    });
+    sauna.run(message, saunabot.reply);
 });
 
 saunabot.when('/kenneth', function(message) {
-    kenneth.run(message, function(message, reply) {
-        saunabot.reply(message, reply);
-    });
+    kenneth.run(message, saunabot.reply);
 });
 
 saunabot.when('øl', function(message) {
-    beer.run(message, function(message, reply) {
-        saunabot.reply(message, reply);
-    });
+    beer.run(message, saunabot.reply);
 });

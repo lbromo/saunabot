@@ -6,8 +6,9 @@
 
             if(saunaDate.setHours(0,0,0,0) == todaysDate.setHours(0,0,0,0)) {
                 callback(message, 'Ja forhelvede! Vi skal i sauna!');
+            } else {
+                callback(message, 'Røvhul! Ingen sauna i dag!!!');
             }
-            callback(message, 'Røvhul! Ingen sauna i dag!!!');
         }
     };
     module.exports.run = run;

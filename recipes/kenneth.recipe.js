@@ -10,6 +10,7 @@
 
     var status = function(message, callback) {
         if (typeof callback !== 'function') return;
+        
         request(endpoint, function(err, resp, body) {
             if (!err && resp.statusCode == 200) {
                 if (JSON.parse(body).status == 0) {

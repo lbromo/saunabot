@@ -41,8 +41,10 @@
                         return commands[i].callback(message);
                     }
                 } else {
-                    if (message.text.toLowerCase().indexOf(commands[i].command) > -1) {
-                        return commands[i].callback(message);
+                    if (message.text != undefined) {
+                        if (message.text.toLowerCase().indexOf(commands[i].command) > -1) {
+                            return commands[i].callback(message);
+                        }
                     }
                 }
             }

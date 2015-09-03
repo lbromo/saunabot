@@ -1,7 +1,7 @@
 (function() {
     var run = function(message, callback) {
         if (typeof callback === 'function') {
-            var saunaDate = new Date("08/03/2015");
+            var saunaDate = new Date("09/03/2015");
             var todaysDate = new Date();
 
             if(saunaDate.setHours(0,0,0,0) == todaysDate.setHours(0,0,0,0)) {

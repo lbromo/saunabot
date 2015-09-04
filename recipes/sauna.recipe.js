@@ -1,7 +1,7 @@
 (function() {
     var request = require('request');
 
-    var endpoint = "https://spreadsheets.google.com/feeds/list/1Ru5StWZMspbxAIYz4G7d6MD7QAdwvnD6EVs5_IjhB8c/od6/public/basic?alt=json";
+    var endpoint = 'https://spreadsheets.google.com/feeds/list/1Ru5StWZMspbxAIYz4G7d6MD7QAdwvnD6EVs5_IjhB8c/od6/public/basic?alt=json';
 
     var run = function(message, callback) {
         if (typeof callback === 'function')
@@ -14,21 +14,22 @@
         request(endpoint, function(err, resp, body) {
             if (!err && resp.statusCode == 200) {
                 
-                var lastCellIndex = JSON.parse(body).feed.entry.length;
-                var saunaDate = new Date(JSON.parse(body).feed.entry[lastCellIndex - 1].title.$t);
+                var entries = JSON.parse(body).feed.entry;
+                
+                var saunaDate = new Date(entries[entries.length - 1].title.$t);
+                var todayDate = new Date();
 
-                var todaysDate = new Date();
+                saunaDate = saunaDate.setHours(0, 0, 0, 0);
+                todayDate = todayDate.setHours(0, 0, 0, 0);
 
-                console.log("09/03/2015");
-                console.log(JSON.parse(body).feed.entry[1].title.$t);
-
-                console.log(saunaDate);
-                console.log(todaysDate);
-
-                if(saunaDate.setHours(0,0,0,0) == todaysDate.setHours(0,0,0,0)) {
+                if (saunaDate == todayDate) {
                     callback(message, 'Ja forhelvede! Vi skal i sauna!');
+                } else if (saunaDate > todayDate) {
+                    var answer = 'Ingen sauna i dag, men der er sauna d. ';
+                    answer += saunaDate;
+                    callback(message, answer);
                 } else {
-                    callback(message, 'Røvhul! Ingen sauna i dag!!!');
+                    callback(message, "Ingen sauna-tur planlagt!");
                 }
             }
         });

@@ -22,11 +22,11 @@
                 saunaDate = saunaDate.setHours(0, 0, 0, 0);
                 todayDate = todayDate.setHours(0, 0, 0, 0);
 
-                if (saunaDate == todayDate) {
+                if (saunaDate === todayDate) {
                     callback(message, 'Ja forhelvede! Vi skal i sauna!');
                 } else if (saunaDate > todayDate) {
                     var answer = 'Ingen sauna i dag, men der er sauna d. ';
-                    answer += saunaDate;
+                    answer += new Date(saunaDate).toLocaleDateString("da-DK");
                     callback(message, answer);
                 } else {
                     callback(message, "Ingen sauna-tur planlagt!");

@@ -13,6 +13,6 @@ saunabot.when('/kenneth', function(message) {
     kenneth.run(message, saunabot.reply);
 });
 
-saunabot.when('øl', function(message) {
+saunabot.when('/bajer', function(message) {
     beer.run(message, saunabot.reply);
 });

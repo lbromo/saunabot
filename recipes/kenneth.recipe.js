@@ -11,7 +11,7 @@
     var status = function(message, callback) {
         if (typeof callback !== 'function') return;
         
-        request(endpoint, function(err, resp, body) {
+        request({'uri': endpoint, 'method': 'GET', 'timeout': 500}, function(err, resp, body) {
             if (!err && resp.statusCode == 200) {
                 if (JSON.parse(body).status == 0) {
                     callback(message, 'Kenneth er der ikke!');

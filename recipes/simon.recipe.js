@@ -18,6 +18,8 @@
                 } else {
                     callback(message, 'Simon er der!');
                 }
+            } else {
+                callback(message, 'Det ved jeg fandme ikke!');
             }
         });
     };

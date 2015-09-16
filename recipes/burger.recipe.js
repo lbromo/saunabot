@@ -29,10 +29,10 @@
     		} else if (daysLeft === 1) {
     			daysLeftString = ' dag';
     		}
-    		var answer = callback(message, 'Der er ingen burger i dag! Men det er der om ';
-    			answer += daysLeft;
-    			answer += daysLeftString;
-    			);
+    		var answer = 'Der er ingen burger i dag! Men det er der om ';
+    		answer += daysLeft;
+    		answer += daysLeftString;
+            callback(message, answer);
     	}
     };
 

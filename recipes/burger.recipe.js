@@ -1,24 +1,24 @@
 // Burger Script
 // Tjekker hvor mange der er tilbage til burger dag!
 (function() {
-	var date = new Date();
-	var weekday = new Array(7);
-	weekday[0] = "Søndag";
-	weekday[1] = "Mandag";
-	weekday[2] = "Tirsdag";
-	weekday[3] = "Onsdag";
-	weekday[4] = "Torsdag";
-	weekday[5] = "Fredag";
-	weekday[6] = "Lørdag";
-	var burgerday = weekday[5]; 
-	var today = weekday[date.getDay()];
-
     var run = function(message, callback) {
         if (typeof callback === 'function')
             status(message, callback);
     };
 
     var status = function(message, callback){
+        var date = new Date();
+        var weekday = new Array(7);
+        weekday[0] = "Søndag";
+        weekday[1] = "Mandag";
+        weekday[2] = "Tirsdag";
+        weekday[3] = "Onsdag";
+        weekday[4] = "Torsdag";
+        weekday[5] = "Fredag";
+        weekday[6] = "Lørdag";
+        var burgerday = weekday[5]; 
+        var today = weekday[date.getDay()];
+
     	if (today === burgerday) {
     		callback(message, 'Ja forfanden! Der er burger i dag!');
     	} else {

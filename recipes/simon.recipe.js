@@ -5,7 +5,7 @@
 
     var run = function(message, callback) {
         if (typeof callback === 'function')
-            status(message, callback);
+            callback(message, 'Det ved jeg fandme ikke!');
     };
 
     var status = function(message, callback) {

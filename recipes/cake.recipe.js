@@ -19,7 +19,7 @@
 	var answer;
 
     	if (today === weekday[3]) {
-    	    answer = 'Onsdags snelg!! FØTEX RUN!!';
+    	    answer = 'Onsdagssnelg!! FØTEX RUN!!';
 	} 
 	else {
     	    answer = 'Det er (næsten) altid en eller anden kage på tilbud.. FØTEX RUN';
